@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-white transition-colors duration-300 min-h-screen font-sans;
+  }
+  
+  /* Force dark mode behavior as the default brand identity */
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-brand-card/40 backdrop-blur-xl border border-white/10 shadow-glow;
+  }
+
+  .glass-morphism {
+    @apply bg-brand-card/60 backdrop-blur-md border border-brand-neon/20 shadow-glow;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2.5 bg-gradient-to-r from-brand-neon to-brand-accent text-white font-semibold rounded-lg 
+           transition-all duration-300 hover:scale-105 hover:shadow-glow-lg active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply px-6 py-2.5 border border-brand-neon text-brand-neon font-semibold rounded-lg 
+           transition-all duration-300 hover:bg-brand-neon/10 hover:shadow-glow active:scale-95;
+  }
+
+  .neon-text {
+    @apply text-brand-neon drop-shadow-[0_0_8px_rgba(139,92,246,0.6)];
+  }
+
+  .input-field {
+    @apply w-full bg-brand-deep/50 border border-brand-neon/20 rounded-lg px-4 py-2 text-white 
+           focus:outline-none focus:border-brand-neon focus:ring-1 focus:ring-brand-neon transition-all;
+  }
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-neon/30 rounded-full hover:bg-brand-neon/50 transition-colors;
+}
